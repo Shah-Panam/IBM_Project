@@ -1,8 +1,8 @@
 import cv2
 
 # Load the two images to be compared
-img1 = cv2.imread("image1.jfif")
-img2 = cv2.imread("imagek.jfif")
+img1 = cv2.imread("/workspaces/IBM_Project/image1.jfif")
+img2 = cv2.imread("/workspaces/IBM_Project/Imagek.jfif")
 
 # Convert images to grayscale
 gray1 = cv2.cvtColor(img1, cv2.COLOR_BGR2GRAY)
