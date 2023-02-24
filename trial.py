@@ -34,7 +34,7 @@ if __name__ == '__main__':
         else:
             videohash1 = VideoHash(path=sys.argv[1])
 
-        video_database = os.listdir("Video_Database")
+        video_database = os.listdir("/workspaces/IBM_Project/Video_Database")
         video_database.remove("database.txt")
         cached_data = filehandler.read_cache_data()
 
