@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Image and Video Comparison</title>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
+	<style>
+		.container {
+			max-width: 800px;
+			margin: 0 auto;
+			margin-top: 50px;
+		}
+		.title {
+			margin-bottom: 20px;
+			text-align: center;
+			font-size: 36px;
+			font-weight: bold;
+		}
+		.subtitle {
+			margin-bottom: 20px;
+			text-align: center;
+			font-size: 20px;
+		}
+		.file {
+			margin-bottom: 20px;
+		}
+		.file-name {
+			font-size: 16px;
+			margin-top: 5px;
+		}
+		.button {
+			margin-top: 20px;
+		}
+	</style>
+</head>
+<body>
+	<section class="section">
+		<div class="container">
+			<div class="title">Image and Video Comparison</div>
+			<div class="subtitle">Upload an image or video to compare it to another file:</div>
+			<form method="POST" enctype="multipart/form-data" action="/workspaces/IBM_Project/Website/compare.php">
+				<div class="file has-name is-boxed">
+					<label class="file-label">
+						<input class="file-input" type="file" name="file">
+						<span class="file-cta">
+							<span class="file-icon">
+								<i class="fas fa-upload"></i>
+							</span>
+							<span class="file-label">Choose a file</span>
+						</span>
+						<span class="file-name">No file selected</span>
+					</label>
+				</div>
+				<div class="button">
+					<button class="button is-primary" type="submit">Compare</button>
+				</div>
+			</form>
+		</div>
+	</section>
+	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+	<script>
+		// Update file name on file select
+		const fileInput = document.querySelector('.file-input');
+		const fileName = document.querySelector('.file-name');
+		fileInput.addEventListener('change', (event) => {
+			const file = event.target.files[0];
+			if (file) {
+				fileName.textContent = file.name;
+			} else {
+				fileName.textContent = 'No file selected';
+			}
+		});
+	</script>
+</body>
+</html>
